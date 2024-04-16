@@ -1,11 +1,13 @@
 const express = require('express');
 const catsRouter = require('./routes/cats.router');
-const server = express();
+const todoRouter = require('./routes/todos.router');
+const app = express();
 
-server.use(express.json());
-server.use('/cats', catsRouter);
+app.use(express.json());
+app.use('/cats', catsRouter);
+app.use('/todos', todoRouter);
 
 const PORT = process.env.PORT || 3000;
-server.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
