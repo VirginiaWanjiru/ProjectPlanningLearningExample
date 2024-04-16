@@ -25,7 +25,7 @@ function updateCat(req, res) {
   res.json(cats[catIndex]);
 }
 
-// Delete a cat by ID
+// Delete a cat by ID delete
 function deleteCat(req, res) {
   const { id } = req.params;
   const catIndex = cats.findIndex(cat => cat.id === parseInt(id));
